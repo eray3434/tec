@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bbb{
+            border-style: solid;
+            background-color: greenyellow;
+            width: 1500px;
+            height: 600px;
+        }
+        h1{
+         display: flex;
+         justify-content: center;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            font-size: 30px;
+            border-style: solid;
+            border-radius: 5px;
+            border-width: 5px;
+            margin: 10px;
+        }
+        div img{
+            width: 150px;
+            height: 100px;
+            margin: 30px;
+            padding-top: 40px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>VELİ EFENDİ</h1>
+    <button onclick="başla()">start</button>
+
+    <div class="bbb">
+        <div > 
+            <img id="at1" src="https://i.gifer.com/embedded/download/41ex.gif">
+        </div>
+            <div id="at2">
+            <img src="https://i.gifer.com/embedded/download/41ex.gif">
+
+            </div>
+            
+            <div id="at3">
+            <img src="https://i.gifer.com/embedded/download/41ex.gif">
+
+            </div>
+    </div>
+    
+</body>
+<script>
+    //var total=total+20
+    function başla(){
+        setInterval(()=>{
+        var x=Math.floor(Math.random()*200)
+        var y=Math.floor(Math.random()*200)
+        var z=Math.floor(Math.random()*200)
+
+        document.querySelector("#at1").style.marginLeft=x+"px"
+        document.querySelector("#at2").style.marginLeft=y+"px"
+        document.querySelector("#at3").style.marginLeft=z+"px"
+
+
+    },1000
+
+    )
+
+
+    }
+   
+
+</script>
+</html>
