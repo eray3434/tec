@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for=""> sayı-1</label>
+        <input type="number" id="sayi1">
+    </div>
+    <div>
+        <label for="">sayı-2</label>
+        <input type="number" id="sayi2">
+    </div>
+    <h1>0</h1>
+    <div>
+        <button onclick="çarp()">çarpma</button>
+    </div>
+    <div>
+        <button onclick="böl()">bölme</button>
+    </div>
+    <div>
+        <button onclick="topla()">Toplama</button>
+    </div>
+    <div>
+        <button onclick="çikar()">Çıkarma</button>
+    </div>
+
+    <script>
+      
+
+        function çarp(){
+            var x=document.getElementById("sayi1").value;
+            var y=document.getElementById("sayi2").value;
+        
+            var çarpa=x*y;
+            document.querySelector("h1").innerHTML=çarpa
+        }
+        function böl(){
+            var x=document.getElementById("sayi1").value;
+            var y=document.getElementById("sayi2").value;
+        
+            var çarpa=x/y;
+            document.querySelector("h1").innerHTML=çarpa
+        }
+        function topla(){
+            
+            var y=Number(document.getElementById("sayi1").value)
+            var x=Number(document.getElementById("sayi2").value)
+            var çarpa=x+y;
+            document.querySelector("h1").innerText=çarpa
+        }
+        function çikar(){
+            var x=document.getElementById("sayi1").value;
+            var y=document.getElementById("sayi2").value;
+        
+            var çarpa=x-y;
+            document.querySelector("h1").innerHTML=çarpa
+        }
+    </script>
+    
+</body>
+</html>
