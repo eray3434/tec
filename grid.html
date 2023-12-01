@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                .container{
+            display: grid;
+            place-items: center;
+
+            grid-template-columns: auto auto auto auto;
+            gap: 15px;
+        }
+        @media only screen and (max-width: 800px){
+            .container{
+            display: grid;
+            grid-template-columns: auto auto ;
+            gap: 8px;}
+
+        }
+        @media only screen and (max-width: 550px){
+            .container{
+            display: grid;
+            grid-template-columns: auto  ;
+            gap: 8px;}
+
+        }
+        .box{
+            height: 375px;
+            width: 270px;
+            border-style: solid;
+            border-color: #DEE1E6;
+            display: grid;
+            place-items: center;
+        }
+        .box img{
+            width: 100%;
+
+        }
+        h1{
+            font-size: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="https://avatars.mds.yandex.net/i?id=d121589b95c27cb43116538c59131a6d6b3d61e6-9612020-images-thumbs&n=13" alt="">
+            <h1>Lenova Masa Üstü Bilgisayar</h1>
+            <p>30.000</p>
+            <button>Kargo Bedava</button>
+
+        </div>
+        <div class="box">
+            <img src="https://avatars.mds.yandex.net/i?id=d121589b95c27cb43116538c59131a6d6b3d61e6-9612020-images-thumbs&n=13" alt="">
+            <h1>Lenova Masa Üstü Bilgisayar</h1>
+            <p>30.000</p>
+            <button>Kargo Bedava</button>
+
+        </div>  <div class="box">
+            <img src="https://avatars.mds.yandex.net/i?id=d121589b95c27cb43116538c59131a6d6b3d61e6-9612020-images-thumbs&n=13" alt="">
+            <h1>Lenova Masa Üstü Bilgisayar</h1>
+            <p>30.000</p>
+            <button>Kargo Bedava</button>
+
+        </div>  <div class="box">
+            <img src="https://avatars.mds.yandex.net/i?id=d121589b95c27cb43116538c59131a6d6b3d61e6-9612020-images-thumbs&n=13" alt="">
+            <h1>Lenova Masa Üstü Bilgisayar</h1>
+            <p>30.000</p>
+            <button>Kargo Bedava</button>
+
+        </div>
+        
+
+    </div>
+    
+</body>
+</html>
