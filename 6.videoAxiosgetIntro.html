@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    </script>
+</head>
+<body>
+    <div>
+        <label for="">Name</label>
+        <input type="text" id="name">
+    </div>
+    <div>
+        <label for="">unitPrice</label>
+        <input type="text" id="unitPrice">
+    </div>
+    <div>
+        <label for="">unitsInStock</label>
+        <input type="text" id="unitsInStock">
+    </div>
+    <div>
+        <button onclick="add()">Ekle</button>
+    </div>
+    
+</body>
+<script>
+     function add(){
+
+var Name=document.getElementById("name").value;
+var unitPrice=document.getElementById("unitPrice").value;
+var unitsInStock=document.getElementById("unitsInStock").value;
+
+var newproducts={
+    Name,
+    unitPrice,
+    unitsInStock
+}
+if(isNaN(unitPrice) || isNaN(unitsInStock)){
+    alert("verdiğiniz değerler bir sayı olmalıdır")
+}else if(unitPrice==0 || unitsInStock==0){
+    alert("verdiğiniz değerler 0 olamaz")
+}else{
+    axios.post('https://northwind.vercel.app/api/products',newproducts)
+    .then(res=>{
+        console.log("success!")
+    })
+
+}
+}
+    
+
+</script>
+</html>
