@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+        
+
+    </script>
+
+    <style>
+        #class{
+            padding-left: 500px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <label for="">company name</label>
+        <input type="text" id="companyname">
+    </div>
+    <div>
+        <label for="">contact name</label>
+        <input type="text" id="contactname">
+    </div>
+    <div>
+        <label for="">contact title</label>
+        <input type="text" id="contacttitle">
+    </div>
+    <div>
+        <button onclick="add()">add</button>
+    </div>
+
+    <div id="class">
+        <label for="">customer Id</label>
+        <input type="text" id="id">
+        <button onclick="del()">sıfırla</button>
+
+    </div>
+    <ul>
+
+    </ul>
+    
+</body>
+<script>
+     axios.get("https://northwind.vercel.app/api/customers")
+    .then(res =>{
+        res.data.forEach(element => {
+            if (element.companyname && element.contactname){
+        var liElement=document.createElement("li")
+
+        liElement.innerText= element.companyname +" - "+element.contactname
+
+        document.querySelector('ul').appendChild(liElement)}
+
+
+
+    })    
+    });
+
+    function add(){
+        var companyname=document.getElementById("companyname").value;
+        var contactname=document.getElementById("contactname").value;
+        var contacttitle=document.getElementById("contacttitle").value;
+
+        var newcustomers={
+            companyname,
+            contactname,
+            contacttitle
+        }
+        axios.post('https://northwind.vercel.app/api/customers',newcustomers)
+        .then(res=>{
+        console.log("success!")
+        window.location.reload();
+    })
+   
+    }
+    function del(){
+        var id=document.getElementById("id").value;
+        axios.delete("https://northwind.vercel.app/api/customers/"+id)
+        .then(res=>{
+            console.log("başarılı");
+            const element=document.getElementById(id);
+            element.remove()
+        
+
+        })
+    }
+</script>
+</html>
