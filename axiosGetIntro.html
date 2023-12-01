@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <h1></h1>
+    <button onclick="getname()"> get name</button>
+    <ul>
+
+    </ul>
+    
+</body>
+<script>
+
+    function getname(){
+    axios.get("https://northwind.vercel.app/api/products")
+    .then(res =>{
+        res.data.forEach(element => {
+        var liElement=document.createElement("li")
+
+        liElement.innerText= element.name +" - "+element.unitPrice
+
+        document.querySelector('ul').appendChild(liElement)
+
+
+
+    })
+    document.querySelector('h1').innerText="Lenght = " + res.data.length
+
+
+
+
+  
+
+        
+    });
+
+
+
+    }
+</script>
+</html>
