@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">ad</label>
+        <input type="text" id="ad">
+    </div>
+    <div>
+        <label for="">soyad</label>
+        <input type="text" id="soyad">
+    </div>
+    <div>
+        <button onclick="yaz()">YAZ</button>
+    </div>
+    <ul>
+
+    </ul>
+    
+</body>
+<script>
+    function yaz(){
+        var ad=document.getElementById("ad").value;
+        var soyad=document.getElementById("soyad").value;
+        
+        var birleştir=ad +" "+soyad;
+        var birleştir=birleştir.toUpperCase();
+
+        var li=document.createElement("li");
+        li.innerText=birleştir;
+        document.querySelector("ul").appendChild(li)
+
+       // var li=document.createElement("li");
+       // li.innerText=soyad
+        //document.querySelector("ul").appendChild(li)
+
+
+        //var div=document.createElement("div")
+        
+    }
+
+</script>
+</html>
